@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Player, initialPlayer } from "../components/player.interface"
+import { Player, initialPlayer } from "../components/player"
 import { dice } from "../assets/dice"
 import './table.css'
 
