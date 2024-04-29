@@ -28,15 +28,9 @@ export const Table = () => {
             // }while(start.find((element) => element.order === played) === undefined)
             // console.log(start.find((element) => element.order === played) === undefined)
             // if(start.filter((element) => element.order === played) === undefined){
-                if(index == 0) {
-                    return start.push({
-                        name: index.toString(), order: played, value: element.value, valid: element.valid, turn: true
-                    })
-                } else {
-                    return start.push({
-                        name: index.toString(), order: played, value: element.value, valid: element.valid, turn: element.turn
-                    })
-                }
+            return start.push({
+                name: index.toString(), order: played, value: element.value, valid: element.valid, turn: index == 0 ? true : element.turn
+            })
             // }
         })
         // start.forEach(()=>{ fim.push(dice(9)) })
