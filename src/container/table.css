@@ -1,0 +1,6 @@
+fieldset {
+    padding: .3rem;
+}
+fieldset button:not(button:first-child) {
+    margin-left: .3rem;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Player, initialPlayer } from "../components/player.interface"
 import { dice } from "../assets/dice"
+import './table.css'
 
 export const Table = () => {
     const [turn, setTurn] = useState<number>(0)
@@ -63,12 +64,14 @@ export const Table = () => {
 
     return (
         <>
-            <>amount{all}</>
+            <div>amount{all}</div>
             <button disabled={true}>turn{turn}</button>
-            <>result{result}</>
-            {player.map((element: Player, index: number)=>{
-                return <button key={Math.random()} disabled={!element.turn} onClick={()=>play(index)}>value:{element.value}turn:{JSON.stringify(element.turn)}</button>
-            })}
+            <div>result{result}</div>
+            <fieldset>
+                {player.map((element: Player, index: number)=>{
+                    return <button key={Math.random()} disabled={!element.turn} onClick={()=>play(index)}>value:{element.value}turn:{JSON.stringify(element.turn)}</button>
+                })}
+            </fieldset>
             {/* <button onClick={sort}>sort</button> */}
         </>
     )
