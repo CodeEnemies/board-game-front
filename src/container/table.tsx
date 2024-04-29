@@ -63,7 +63,7 @@ export const Table = () => {
             <div>result{result}</div>
             <fieldset>
                 {player.map((element: Player, index: number)=>{
-                    return <button key={Math.random()} disabled={!element.turn} onClick={()=>play(index)}>value:{element.value}turn:{JSON.stringify(element.turn)}</button>
+                    return <button key={Math.random()} disabled={!element.turn} onClick={()=>play(index)}>value:{element.value} turn:{JSON.stringify(element.turn)}</button>
                 })}
             </fieldset>
             {/* <button onClick={sort}>sort</button> */}
