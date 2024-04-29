@@ -17,10 +17,17 @@ export const Table = () => {
     }
     const sort = (players: Array<Player>) => {
         let start: Player[] = []
+        let played: number = 0
         players.map((element, index)=>{
-            return start.push({
-                name: index.toString(), order: dice(6), value: element.value, valid: element.valid
-            }) 
+            // do{
+                played = dice(6)
+            // }while(start.find((element) => element.order === played) === undefined)
+            // console.log(start.find((element) => element.order === played) === undefined)
+            // if(start.filter((element) => element.order === played) === undefined){
+                return start.push({
+                    name: index.toString(), order: played, value: element.value, valid: element.valid
+                })
+            // }
         })
         // start.forEach(()=>{ fim.push(dice(9)) })
         return start
@@ -46,6 +53,7 @@ export const Table = () => {
             {player.map((element: Player, index: number)=>{
                 return <button key={Math.random()} onClick={()=>play(index)}>order:{element.order}value:{element.value}</button>
             })}
+            {/* <button onClick={sort}>sort</button> */}
         </>
     )
 }
