@@ -3,6 +3,7 @@ export interface Player {
     order: number;
     value: number;
     valid: boolean;
+    turn: boolean;
 }
 
 export const initialPlayer: Player = {
@@ -10,4 +11,5 @@ export const initialPlayer: Player = {
     order: 0,
     value: 0,
     valid: true,
+    turn: false,
 }

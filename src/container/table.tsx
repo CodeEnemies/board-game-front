@@ -15,6 +15,9 @@ export const Table = () => {
     const addTurn = () => {
         setTurn(turn + 1)
     }
+    const whoseTurn = () => {
+        setTurn(turn + 1)
+    }
     const sort = (players: Array<Player>) => {
         let start: Player[] = []
         let played: number = 0
@@ -24,9 +27,15 @@ export const Table = () => {
             // }while(start.find((element) => element.order === played) === undefined)
             // console.log(start.find((element) => element.order === played) === undefined)
             // if(start.filter((element) => element.order === played) === undefined){
-                return start.push({
-                    name: index.toString(), order: played, value: element.value, valid: element.valid
-                })
+                if(index == 0) {
+                    return start.push({
+                        name: index.toString(), order: played, value: element.value, valid: element.valid, turn: true
+                    })
+                } else {
+                    return start.push({
+                        name: index.toString(), order: played, value: element.value, valid: element.valid, turn: element.turn
+                    })
+                }
             // }
         })
         // start.forEach(()=>{ fim.push(dice(9)) })
@@ -35,9 +44,16 @@ export const Table = () => {
     const play = (index: number) => {
         let newArr = player.slice()
         let played: number = dice(6)
-        newArr.map((element, index2 ) => {
+        newArr.forEach((element, index2) => {
             if(element.name == index.toString()){
-                return newArr[index2].value = newArr[index2].value + played
+                newArr[index2].value = newArr[index2].value + played
+                //change turn
+                newArr[index2].turn = false
+                if(index2 < all-1){
+                    newArr[index2 + 1].turn = true
+                } else {
+                    newArr[0].turn = true
+                }
             }
         })
         setResult(played)
@@ -51,7 +67,7 @@ export const Table = () => {
             <button disabled={true}>turn{turn}</button>
             <>result{result}</>
             {player.map((element: Player, index: number)=>{
-                return <button key={Math.random()} onClick={()=>play(index)}>order:{element.order}value:{element.value}</button>
+                return <button key={Math.random()} disabled={!element.turn} onClick={()=>play(index)}>value:{element.value}turn:{JSON.stringify(element.turn)}</button>
             })}
             {/* <button onClick={sort}>sort</button> */}
         </>
