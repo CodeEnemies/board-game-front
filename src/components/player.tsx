@@ -1,9 +1,12 @@
+import { Character, initialCharacter } from "./character";
+
 export interface Player {
     name: string;
     order: number;
     value: number;
     valid: boolean;
     turn: boolean;
+    character?: Character;
 }
 
 export const initialPlayer: Player = {
@@ -12,4 +15,5 @@ export const initialPlayer: Player = {
     value: 0,
     valid: true,
     turn: false,
+    character: initialCharacter,
 }

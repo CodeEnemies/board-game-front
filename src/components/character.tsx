@@ -1,3 +1,5 @@
+import { Item, initialItem } from "./item";
+
 export interface Character {
     // status aumenta durante o modo sanin
     status: number;
@@ -5,6 +7,7 @@ export interface Character {
     mana: number;
     stamina?: number;
     maxWeight?: number;
+    item?: Item[];
 }
 
 export const initialCharacter: Character = {
@@ -13,4 +16,5 @@ export const initialCharacter: Character = {
     mana: 0,
     stamina: 0,
     maxWeight: 0,
+    item: [initialItem]
 }
