@@ -58,14 +58,20 @@ export const Table = () => {
 
     return (
         <>
-            <div>amount{all}</div>
-            <button disabled={true}>turn{turn}</button>
-            <div>result{result}</div>
+            <>amount {all} </>
+            <button disabled={true}>turn {turn}</button>
+            <div>result {result}</div>
             <fieldset>
                 {player.map((element: Player, index: number)=>{
-                    return <button key={Math.random()} disabled={!element.turn} onClick={()=>play(index)}>value:{element.value} turn:{JSON.stringify(element.turn)}</button>
+                    return <fieldset>
+                        <button key={Math.random()} disabled={!element.turn}>value:{element.value} turn:{JSON.stringify(element.turn)}
+                        </button>
+                        <button disabled={!element.turn} onClick={()=>play(index)}>👊</button>
+                    </fieldset>
                 })}
             </fieldset>
+            <a href={"https://dreamyguy.github.io/react-emojis/"} target="_blank">ref: </a>
+            ❤️️🖤
             {/* <button onClick={sort}>sort</button> */}
         </>
     )
