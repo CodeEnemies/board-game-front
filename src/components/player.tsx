@@ -1,10 +1,10 @@
 import { Character, initialCharacter } from "./character";
 
 export interface Player {
-    name: string;
+    name?: string;
     order: number;
     value: number;
-    valid: boolean;
+    valid?: boolean;
     turn: boolean;
     character?: Character;
 }
