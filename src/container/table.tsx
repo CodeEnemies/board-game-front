@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Team, initialTeam } from "../components/team"
-import { Player, initialPlayer } from "../components/player"
 import { dice } from "../assets/dice"
 import './table.css'
 
