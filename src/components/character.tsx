@@ -12,7 +12,7 @@ export interface Character {
 
 export const initialCharacter: Character = {
     status: 0,
-    hp: 0,
+    hp: 20,
     mana: 0,
     stamina: 0,
     maxWeight: 0,

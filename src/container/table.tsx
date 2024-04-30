@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Team, initialTeam } from "../components/team"
 import { dice } from "../assets/dice"
 import './table.css'
+import { initialCharacter } from "../components/character"
 
 export const Table = () => {
     const [turn, setTurn] = useState<number>(0)
@@ -29,7 +30,7 @@ export const Table = () => {
             // console.log(start.find((element) => element.order === played) === undefined)
             // if(start.filter((element) => element.order === played) === undefined){
             return start.push(
-                {name: index.toString(), player: [{order: played, value: element.player[0].value, turn: index == 0 ? true : element.player[0].turn}] }
+                {name: index.toString(), player: [{order: played, value: element.player[0].value, turn: index == 0 ? true : element.player[0].turn, character: initialCharacter}] }
             )
             // }
         })
@@ -58,16 +59,19 @@ export const Table = () => {
 
     return (
         <>
-            <>amount {all} </>
+            <>amount <sup>{all}</sup> </>
             <button disabled={true}>turn {turn}</button>
-            <div>result {result}</div>
+            <div>result <sup>{result}</sup></div>
             <fieldset>
                 {team.map((element: Team, index: number)=>{
-                    return <fieldset>
-                        <button key={Math.random()} disabled={!element.player[0].turn}>order: {element.player[0].order} value:{element.player[0].value} turn:{JSON.stringify(element.player[0].turn)}
-                        </button>
-                        <button disabled={!element.player[0].turn} onClick={()=>play(index)}>👊</button>
-                    </fieldset>
+                    return <details>
+                        <summary>
+                            <button key={Math.random()} disabled={!element.player[0].turn}>order: {element.player[0].order} value:{element.player[0].value} turn:{JSON.stringify(element.player[0].turn)}</button>
+                            <button disabled={!element.player[0].turn} onClick={()=>play(index)}>👊</button>
+                        </summary>
+                        <p>❤️️ <meter className="hp" value={element.player[0].character?.hp} max="100"> 32% </meter></p>
+                        <p>🔵 <meter className="mana" value={element.player[0].character?.mana} max="100"> 32% </meter></p>
+                    </details>
                 })}
             </fieldset>
             <a href={"https://dreamyguy.github.io/react-emojis/"} target="_blank">ref: </a>
