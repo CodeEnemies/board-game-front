@@ -63,7 +63,7 @@ git clone https://github.com/CodeEnemies/table-front
 ```
 
 # commit types <type_of_commit>
-* feat: Um novo recurso para a aplicação, e não precisa ser algo grande, mas apenas algo que não existia antes e que a pessoa final irá acessar.
+* feature: Um novo recurso para a aplicação, e não precisa ser algo grande, mas apenas algo que não existia antes e que a pessoa final irá acessar.
 * fix: Correções de bugs
 * docs: Alterações em arquivos relacionados à documentações
 * style: Alterações de estilização, formatação etc
@@ -138,3 +138,25 @@ git push -f
 ```
 
 ref: https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657
+
+add color, template: `#RRGGBB`, ex.:	`#0969DA`
+
+references:
+- [x] #739
+- [ ] https://github.com/octo-org/octo-repo/issues/740
+- [ ] Add delight to the experience when all tasks are complete :tada:
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
