@@ -62,18 +62,18 @@ export const Table = () => {
             <>amount <sup>{all}</sup> </>
             <button disabled={true}>turn {turn}</button>
             <div>result <sup>{result}</sup></div>
-            <fieldset>
-                {team.map((element: Team, index: number)=>{
-                    return <details>
-                        <summary>
-                            <button key={Math.random()} disabled={!element.player[0].turn}>order: {element.player[0].order} value:{element.player[0].value} turn:{JSON.stringify(element.player[0].turn)}</button>
-                            <button disabled={!element.player[0].turn} onClick={()=>play(index)}>👊</button>
-                        </summary>
-                        <p>❤️️ <meter className="hp" value={element.player[0].character?.hp} max="100"> 32% </meter></p>
-                        <p>🔵 <meter className="mana" value={element.player[0].character?.mana} max="100"> 32% </meter></p>
-                    </details>
-                })}
-            </fieldset>
+            {team.map((element: Team, index: number)=>{
+                return <fieldset>
+                <details>
+                    <summary>
+                        <button key={Math.random()} disabled={!element.player[0].turn}>{element.player[0].value}</button>
+                        <button disabled={!element.player[0].turn} onClick={()=>play(index)}>👊</button>
+                        ❤️️ <meter className="hp" min={0} max={20} value={element.player[0].character?.hp}></meter>
+                        🔵 <meter className="mana" min={0} max={20} value={element.player[0].character?.mana}></meter>
+                    </summary>
+                    <>{JSON.stringify(element.player[0].character?.item)}</>
+                </details></fieldset>
+            })}
             <a href={"https://dreamyguy.github.io/react-emojis/"} target="_blank">ref: </a>
             ❤️️🖤
             {/* <button onClick={sort}>sort</button> */}
