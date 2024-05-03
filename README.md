@@ -49,7 +49,7 @@ Generic Board Game.
 * [Licence](#licence)
 
 ## How to work with this project
-Type in intellij terminal tab
+type in terminal
 
 ### create this project
 ```
