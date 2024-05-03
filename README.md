@@ -1,45 +1,48 @@
-# React + TypeScript + Vite
+# _Board Game_
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![github](https://img.shields.io/github/stars/CodeEnemies/board-game-front "Github")
+![typescript](https://img.shields.io/badge/typescript-5.4.5-0076c6 "Typescript")
+![node](https://img.shields.io/badge/node-20.12.2-75AC64 "Node")
+![vscode](https://img.shields.io/badge/vscode-1.89-1E97E8 "Visual Studio Code")
 
-Currently, two official plugins are available:
+# Necessary Tech stack:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+|Name                 | Source | File name version		      |Link for download
+|:-------------------:|-------:|---------------------------:|:-----------------
+|`typescript`         |language|                            |https://www.typescriptlang.org/
+|`node`			          | engine |node-v20.12.2-x64.msi			  |https://nodejs.org/en/download
+|`visual studio code` |  IDE   |VSCodeUserSetup-x64-1.89.0	|https://code.visualstudio.com/docs
 
-## Expanding the ESLint configuration
+# Description
+Generic Board Game.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Roadmap
+#### in development
+- [ ] campaign
+- [ ] ludo
+- [ ] dungeon crawler
+#### in concept
+- [ ] puzzle
+- [ ] card game
+- [ ] fighting
+- [ ] rpg
+- [ ] roguelike
+- [ ] mmorpg
+- [ ] fps
+- [ ] moba
+- [ ] battle royale
+- [ ] strategy
+- [ ] simulation
 
 ## Summary
 * [How to work with this project](#how-to-work-with-this-project)
-  - [how to create this project](#how-to-create-this-project)
-  - [how change folder and access by vscode](#how-change-folder-and-access-by-vscode)
-  - [how to clone the project and build locally](#how-to-clone-the-project-and-build-locally)
-  - [how to install dependencies for this project](#how-to-install-dependencies-for-this-project)
-  - [how to run project](#how-to-run-project)
-  - [how to stop application on localhost](#how-to-stop-application-on-localhost)
-  - [how to create file war](#how-to-create-file-war)
-  - [how to select page on get request](#how-to-select-page-on-get-request)
-* [How to deploy on Tomcat Server](#how-to-deploy-on-tomcat-server)
+  - [create this project](#create-this-project)
+  - [change folder and access by vscode](#change-folder-and-access-by-vscode)
+  - [clone the project and build locally](#clone-the-project-and-build-locally)
+  - [install dependencies for this project](#install-dependencies-for-this-project)
+  - [run project](#run-project)
+  - [build project](#build-project)
+* [deploy on Tomcat Server](#deploy-on-tomcat-server)
 * [Features](#features)
 * [HTTP Status code list](#http-status-code-list)
 * [Developers](#developers)
@@ -59,10 +62,30 @@ code .
 ```
 ### clone the project and build locally
 ```
-git clone https://github.com/CodeEnemies/table-front
+git clone https://github.com/CodeEnemies/board-game-front
+```
+### install dependencies for this project
+```
+npm i
+```
+### run project
+```
+npm run dev
+```
+### build project
+```
+npm run build
 ```
 
-# commit types <type_of_commit>
+# Reference API download link
+
+> [https://github.com/CodeEnemies/board-game-back](https://github.com/CodeEnemies/board-game-back)
+
+# Reference API, running locally
+
+> [http://localhost:8080/board-game](http://localhost:8080/board-game)
+
+## Commit types
 * feature: Um novo recurso para a aplicação, e não precisa ser algo grande, mas apenas algo que não existia antes e que a pessoa final irá acessar.
 * fix: Correções de bugs
 * docs: Alterações em arquivos relacionados à documentações
@@ -72,6 +95,7 @@ git clone https://github.com/CodeEnemies/table-front
 * test: Criação ou modificação de testes
 * chore: Alterações em arquivos de configuração, build, distribuição, CI, ou qualquer outra coisa que não envolva diretamente o código da aplicação para o usuário final
 
+## Git
 ### initialize git repository, create git folder
 ```
 git init
@@ -137,14 +161,70 @@ git rebase main
 git push -f
 ```
 
-ref: https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657
+# Deploy
+## Deploy in nginx
+```
+npx browserslist@latest --update-db
+set -e
+npm run build
+npm run preview
+service nginx stop
+rm -rf /usr/share/nginx/html/<old-name>
+cp /home/<user>/<application-name>.zip /usr/share/nginx/html/
+unzip /usr/share/nginx/html/<application-name>.zip
+chown nginx:nginx /usr/share/nginx/html/<application-name>
+rm /usr/share/nginx/html/<application-name>.zip
+service nginx start
+```
 
-add color, template: `#RRGGBB`, ex.:	`#0969DA`
+### Edit /etc/nginx/conf.d/default.conf
 
-references:
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
+Add the new code
+```
+location /<folder> {
+    root    /usr/share/nginx/html;
+    index   index.html  index.htm;
+}
+```
+
+# SVG Icons
+
+> [SVG Icons](https://www.svgrepo.com/)
+
+## HTTP Status code list
+> [HHTP Status Code](https://httpstatuses.com/)
+
+## Developers
+> [Gadelha TI](https://github.com/gadelhati)
+> [Lucas](https://github.com/lucassmartins)
+> [Augusto](https://github.com/augustmat)
+> [Diego](https://github.com/diegoferreirapinto)
+
+## Licence
+> [MIT License](https://choosealicense.com/licenses/mit/)
+```
+MIT License
+
+Copyright (c) 2020 Jason Watmore
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
