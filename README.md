@@ -42,6 +42,10 @@ Generic Board Game.
   - [install dependencies for this project](#install-dependencies-for-this-project)
   - [run project](#run-project)
   - [build project](#build-project)
+* [API download link](#api-download-link)
+* [API running locally](#api-running-locally)
+* [Commit types](#commit-types)
+* [Git](#git)
 * [Deploy](#deploy)
   - [deploy in nginx](#deploy-in-nginx)
 * [SVG Icons](#svg-icons)
@@ -78,11 +82,11 @@ npm run dev
 npm run build
 ```
 
-# Reference API download link
+## API download link
 
 > [https://github.com/CodeEnemies/board-game-back](https://github.com/CodeEnemies/board-game-back)
 
-# Reference API, running locally
+## API running locally
 
 > [http://localhost:8080/board-game](http://localhost:8080/board-game)
 
@@ -97,6 +101,8 @@ npm run build
 * chore: Alterações em arquivos de configuração, build, distribuição, CI, ou qualquer outra coisa que não envolva diretamente o código da aplicação para o usuário final
 
 ## Git
+type in terminal
+
 ### initialize git repository, create git folder
 ```
 git init
@@ -189,10 +195,11 @@ location /<folder> {
 ```
 
 ## SVG Icons
-
+> [!NOTE]
 > [SVG Icons](https://www.svgrepo.com/)
 
 ## HTTP Status code list
+> [!NOTE]
 > [HHTP Status Code](https://httpstatuses.com/)
 
 ## Developers
