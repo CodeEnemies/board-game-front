@@ -187,7 +187,7 @@ location /<folder> {
 }
 ```
 
-# SVG Icons
+## SVG Icons
 
 > [SVG Icons](https://www.svgrepo.com/)
 
