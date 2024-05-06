@@ -21,6 +21,8 @@ Generic Board Game.
 - [ ] campaign
 - [ ] ludo
 - [ ] dungeon crawler
+- [ ] survival
+
 #### in concept
 - [ ] puzzle
 - [ ] card game
