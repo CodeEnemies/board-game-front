@@ -36,18 +36,12 @@ Generic Board Game.
 - [ ] strategy
 - [ ] simulation
 
-## Summary
+# Summary
 * [How to work with this project](#how-to-work-with-this-project)
-  - [create this project](#create-this-project)
-  - [change folder and access by vscode](#change-folder-and-access-by-vscode)
-  - [clone the project and build locally](#clone-the-project-and-build-locally)
-  - [install dependencies for this project](#install-dependencies-for-this-project)
-  - [run project](#run-project)
-  - [build project](#build-project)
 * [API download link](#api-download-link)
 * [API running locally](#api-running-locally)
 * [Commit types](#commit-types)
-* [Git](#git)
+* [Git tips](#git-tips)
 * [Deploy](#deploy)
   - [deploy in nginx](#deploy-in-nginx)
 * [SVG Icons](#svg-icons)
@@ -58,29 +52,24 @@ Generic Board Game.
 ## How to work with this project
 type in terminal
 
-### create this project
 ```
+# create this project
 npm create vite@latest table-front -- --template react-ts
-```
-### change folder and access by vscode
-```
+
+# change folder and access by vscode
 cd table-front
 code .
-```
-### clone the project and build locally
-```
+
+# clone the project and build locally
 git clone https://github.com/CodeEnemies/board-game-front
-```
-### install dependencies for this project
-```
+
+# install dependencies for this project
 npm i
-```
-### run project
-```
+
+# run project
 npm run dev
-```
-### build project
-```
+
+# build project
 npm run build
 ```
 
@@ -92,7 +81,9 @@ npm run build
 
 > [http://localhost:8080/board-game](http://localhost:8080/board-game)
 
-## Commit types
+## Git tips
+
+### Commit types
 * feature: Um novo recurso para a aplicação, e não precisa ser algo grande, mas apenas algo que não existia antes e que a pessoa final irá acessar.
 * fix: Correções de bugs
 * docs: Alterações em arquivos relacionados à documentações
@@ -102,71 +93,54 @@ npm run build
 * test: Criação ou modificação de testes
 * chore: Alterações em arquivos de configuração, build, distribuição, CI, ou qualquer outra coisa que não envolva diretamente o código da aplicação para o usuário final
 
-## Git
 type in terminal
-
-### initialize git repository, create git folder
 ```
+# initialize git repository, create git folder
 git init
-```
-### add all files on the staging area
-```
+
+# add all files on the staging area
 git add .
-```
-### shows tracked files on the staging
-```
+
+# shows tracked files on the staging
 git status
-```
-### packs tracked files on the staging
-```
+
+# packs tracked files on the staging
 git commit -m "[ID]<type_of_commit>:<message>"
-```
-### shows commit history
-```
+
+# shows commit history
 git log
-```
-### define main branch
-```
+
+# define main branch
 git branch -M main
-```
-### add remote repository, don't forget "Git Credential Manager Core"
-```
+
+# add remote repository, don't forget "Git Credential Manager Core"
 git remote add origin https://*.git
-```
-### sends changes to the repository
-```
+
+# sends changes to the repository
 git push -u origin <branch_name>
-```
-### update branch
-```
+
+# update branch
 git pull
-```
-### create new branch
-```
+
+# create new branch
 git checkout -b <branch_name>
-```
-### delete a local branch
-```
+
+# delete a local branch
 git branch -d <branch_name>
-```
-### delete a remote branch
-```
+
+# delete a remote branch
 git push --delete origin <branch_name>
-```
-### show all branch
-```
+
+# show all branch
 git branch
-```
-### upload uma branch
-```
+
+# upload a branch
 git push -u <branch_name>
-```
-### update branch
-```
+
+# update branch
 git rebase main
-```
-### 
-```
+
+# upload your changes
 git push -f
 ```
 
