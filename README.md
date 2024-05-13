@@ -142,6 +142,22 @@ git rebase main
 
 # upload your changes
 git push -f
+
+# list tag
+git tag
+
+# list tag by key
+git tag -l "v1.8.5*"
+
+# create a tag
+git tag -a v1.4 -m "my version 1.4"
+
+# show a tag
+git show v1.4
+
+# creating tags later
+git log --pretty=oneline
+git tag -a v1.2 <UUID>
 ```
 
 # Deploy
