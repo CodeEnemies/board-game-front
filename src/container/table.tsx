@@ -64,6 +64,7 @@ export const Table = () => {
             <div>result <sup>{result}</sup></div>
             {team.map((element: Team, index: number)=>{
                 return <fieldset>
+                <legend>Team</legend>
                 <details>
                     <summary>
                         <button key={Math.random()} disabled={!element.player[0].turn}>{element.player[0].value}</button>
@@ -71,7 +72,7 @@ export const Table = () => {
                         ❤️️ <meter className="hp" min={0} max={20} value={element.player[0].character?.hp}></meter>
                         🔵 <meter className="mana" min={0} max={20} value={element.player[0].character?.mana}></meter>
                     </summary>
-                    <>{JSON.stringify(element.player[0].character?.item)}</>
+                    <>Character: {JSON.stringify(element.player[0].character?.item)}</>
                 </details></fieldset>
             })}
             <a href={"https://dreamyguy.github.io/react-emojis/"} target="_blank">ref: </a>
