@@ -5,7 +5,7 @@
 ![node](https://img.shields.io/badge/node-20.12.2-75AC64 "Node")
 ![vscode](https://img.shields.io/badge/vscode-1.89-1E97E8 "Visual Studio Code")
 
-# Necessary Tech stack:
+### Necessary Tech stack:
 
 |Name                 | Source | File name version		      |Link for download
 |:-------------------:|-------:|---------------------------:|:-----------------
@@ -13,7 +13,7 @@
 |`node`			          | engine |node-v20.12.2-x64.msi			  |https://nodejs.org/en/download
 |`visual studio code` |  IDE   |VSCodeUserSetup-x64-1.89.0	|https://code.visualstudio.com/docs
 
-# Description
+## Description
 Generic Board Game.
 
 ### Roadmap
@@ -36,14 +36,11 @@ Generic Board Game.
 - [ ] strategy
 - [ ] simulation
 
-# Summary
+## Summary
 * [How to work with this project](#how-to-work-with-this-project)
-* [API download link](#api-download-link)
-* [API running locally](#api-running-locally)
-* [Commit types](#commit-types)
-* [Git tips](#git-tips)
 * [Deploy](#deploy)
-  - [deploy in nginx](#deploy-in-nginx)
+* [Links](#links)
+* [Git tips](#git-tips)
 * [SVG Icons](#svg-icons)
 * [HTTP Status code list](#http-status-code-list)
 * [Developers](#developers)
@@ -59,11 +56,13 @@ npm create vite@latest table-front -- --template react-ts
 # change folder and access by vscode
 cd table-front
 code .
-
-# clone the project and build locally
+```
+type in vscode terminal tab
+```
+# clone the project
 git clone https://github.com/CodeEnemies/board-game-front
 
-# install dependencies for this project
+# install dependencies
 npm i
 
 # run project
@@ -73,11 +72,37 @@ npm run dev
 npm run build
 ```
 
-## API download link
+## Deploy
+### Deploy in nginx
+```
+npx browserslist@latest --update-db
+set -e
+npm run build
+npm run preview
+service nginx stop
+rm -rf /usr/share/nginx/html/<old-name>
+cp /home/<user>/<application-name>.zip /usr/share/nginx/html/
+unzip /usr/share/nginx/html/<application-name>.zip
+chown nginx:nginx /usr/share/nginx/html/<application-name>
+rm /usr/share/nginx/html/<application-name>.zip
+service nginx start
+```
+
+### Edit /etc/nginx/conf.d/default.conf
+
+Add the new code
+```
+location /<folder> {
+    root    /usr/share/nginx/html;
+    index   index.html  index.htm;
+}
+```
+## Links
+### API download link
 
 > [https://github.com/CodeEnemies/board-game-back](https://github.com/CodeEnemies/board-game-back)
 
-## API running locally
+### API running locally
 
 > [http://localhost:8080/board-game](http://localhost:8080/board-game)
 
@@ -160,38 +185,10 @@ git log --pretty=oneline
 git tag -a v1.2 <UUID>
 ```
 
-# Deploy
-## Deploy in nginx
-```
-npx browserslist@latest --update-db
-set -e
-npm run build
-npm run preview
-service nginx stop
-rm -rf /usr/share/nginx/html/<old-name>
-cp /home/<user>/<application-name>.zip /usr/share/nginx/html/
-unzip /usr/share/nginx/html/<application-name>.zip
-chown nginx:nginx /usr/share/nginx/html/<application-name>
-rm /usr/share/nginx/html/<application-name>.zip
-service nginx start
-```
-
-### Edit /etc/nginx/conf.d/default.conf
-
-Add the new code
-```
-location /<folder> {
-    root    /usr/share/nginx/html;
-    index   index.html  index.htm;
-}
-```
-
 ## SVG Icons
-> [!NOTE]
 > [SVG Icons](https://www.svgrepo.com/)
 
 ## HTTP Status code list
-> [!NOTE]
 > [HHTP Status Code](https://httpstatuses.com/)
 
 ## Developers
