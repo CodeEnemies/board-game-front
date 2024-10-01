@@ -18,6 +18,7 @@ Generic Board Game.
 
 ### Roadmap
 #### in development
+- [ ] add flip card
 - [ ] campaign
 - [ ] ludo
 - [ ] dungeon crawler
