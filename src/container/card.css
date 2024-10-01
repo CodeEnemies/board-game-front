@@ -1,0 +1,75 @@
+body {
+    min-height: 100vh;
+    background-image: url("/src/assets/image/background.jpg");
+}
+#card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 30rem;
+    width: 20rem;
+    border-radius: .75rem;
+    text-align: right;
+    figure {
+        margin: 0%;
+        position: absolute;
+        top: 0%;
+        height: 96.9%;
+        width: 95.5%;
+        padding: .5rem;
+        img {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: .5rem;
+            outline: .25rem solid #FFD700;
+            z-index: -1;
+        }
+        figcaption {
+            font-size: 1.5rem;
+            font-family: "Whisper", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 2rem;
+        width: 96%;
+        padding: .5rem;
+        font-style: italic;
+        border-radius: .5rem;
+        img {
+            height: 100%;
+        }
+    }
+    footer {
+        width: 100%;
+        font-style: italic;
+        text-align: justify;
+        span {
+            display: flex;
+            justify-content: space-between;
+            font-size: .75rem;
+            p {
+                margin: 0%;
+            }
+        }
+        fieldset {
+            margin: 0%;
+            color: white;
+            border-radius: .5rem;
+            backdrop-filter: blur(.25rem);
+            blockquote p {
+                font-size: .7rem;
+                font-family: "Whisper", cursive;
+                font-weight: 400;
+                font-style: normal;
+            }
+        }
+    }
+}
