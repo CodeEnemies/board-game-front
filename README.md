@@ -19,11 +19,12 @@ Generic Board Game.
 ### Roadmap
 #### in development
 - [ ] add flip card
+- [ ] super trunfo
+- [ ] add lilo
 - [ ] campaign
 - [ ] ludo
 - [ ] dungeon crawler
 - [ ] survival
-
 #### in concept
 - [ ] puzzle
 - [ ] card game
