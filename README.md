@@ -5,7 +5,7 @@
 ![node](https://img.shields.io/badge/node-20.12.2-75AC64 "Node")
 ![vscode](https://img.shields.io/badge/vscode-1.89-1E97E8 "Visual Studio Code")
 
-# Necessary Tech stack:
+### Necessary Tech stack:
 
 |Name                 | Source | File name version		      |Link for download
 |:-------------------:|-------:|---------------------------:|:-----------------
@@ -13,7 +13,7 @@
 |`node`			          | engine |node-v20.12.2-x64.msi			  |https://nodejs.org/en/download
 |`visual studio code` |  IDE   |VSCodeUserSetup-x64-1.89.0	|https://code.visualstudio.com/docs
 
-# Description
+## Description
 Generic Board Game.
 
 ### Roadmap
@@ -22,6 +22,8 @@ Generic Board Game.
 - [ ] campaign
 - [ ] ludo
 - [ ] dungeon crawler
+- [ ] survival
+
 #### in concept
 - [ ] puzzle
 - [ ] card game
@@ -37,18 +39,9 @@ Generic Board Game.
 
 ## Summary
 * [How to work with this project](#how-to-work-with-this-project)
-  - [create this project](#create-this-project)
-  - [change folder and access by vscode](#change-folder-and-access-by-vscode)
-  - [clone the project and build locally](#clone-the-project-and-build-locally)
-  - [install dependencies for this project](#install-dependencies-for-this-project)
-  - [run project](#run-project)
-  - [build project](#build-project)
-* [API download link](#api-download-link)
-* [API running locally](#api-running-locally)
-* [Commit types](#commit-types)
-* [Git](#git)
 * [Deploy](#deploy)
-  - [deploy in nginx](#deploy-in-nginx)
+* [Links](#links)
+* [Git tips](#git-tips)
 * [SVG Icons](#svg-icons)
 * [HTTP Status code list](#http-status-code-list)
 * [Developers](#developers)
@@ -57,120 +50,31 @@ Generic Board Game.
 ## How to work with this project
 type in terminal
 
-### create this project
 ```
+# create this project
 npm create vite@latest table-front -- --template react-ts
-```
-### change folder and access by vscode
-```
+
+# change folder and access by vscode
 cd table-front
 code .
 ```
-### clone the project and build locally
+type in vscode terminal tab
 ```
+# clone the project
 git clone https://github.com/CodeEnemies/board-game-front
-```
-### install dependencies for this project
-```
+
+# install dependencies
 npm i
-```
-### run project
-```
+
+# run project
 npm run dev
-```
-### build project
-```
+
+# build project
 npm run build
 ```
 
-## API download link
-
-> [https://github.com/CodeEnemies/board-game-back](https://github.com/CodeEnemies/board-game-back)
-
-## API running locally
-
-> [http://localhost:8080/board-game](http://localhost:8080/board-game)
-
-## Commit types
-* feature: Um novo recurso para a aplicação, e não precisa ser algo grande, mas apenas algo que não existia antes e que a pessoa final irá acessar.
-* fix: Correções de bugs
-* docs: Alterações em arquivos relacionados à documentações
-* style: Alterações de estilização, formatação etc
-* refactor: Um codigo de refatoração, ou seja, que foi alterado, que tem uma mudança transparente para o usuário final, porém uma mudança real para a aplicação
-* perf: Alterações relacionadas à performance
-* test: Criação ou modificação de testes
-* chore: Alterações em arquivos de configuração, build, distribuição, CI, ou qualquer outra coisa que não envolva diretamente o código da aplicação para o usuário final
-
-## Git
-type in terminal
-
-### initialize git repository, create git folder
-```
-git init
-```
-### add all files on the staging area
-```
-git add .
-```
-### shows tracked files on the staging
-```
-git status
-```
-### packs tracked files on the staging
-```
-git commit -m "[ID]<type_of_commit>:<message>"
-```
-### shows commit history
-```
-git log
-```
-### define main branch
-```
-git branch -M main
-```
-### add remote repository, don't forget "Git Credential Manager Core"
-```
-git remote add origin https://*.git
-```
-### sends changes to the repository
-```
-git push -u origin <branch_name>
-```
-### update branch
-```
-git pull
-```
-### create new branch
-```
-git checkout -b <branch_name>
-```
-### delete a local branch
-```
-git branch -d <branch_name>
-```
-### delete a remote branch
-```
-git push --delete origin <branch_name>
-```
-### show all branch
-```
-git branch
-```
-### upload uma branch
-```
-git push -u <branch_name>
-```
-### update branch
-```
-git rebase main
-```
-### 
-```
-git push -f
-```
-
-# Deploy
-## Deploy in nginx
+## Deploy
+### Deploy in nginx
 ```
 npx browserslist@latest --update-db
 set -e
@@ -194,13 +98,98 @@ location /<folder> {
     index   index.html  index.htm;
 }
 ```
+## Links
+### API download link
+
+> [https://github.com/CodeEnemies/board-game-back](https://github.com/CodeEnemies/board-game-back)
+
+### API running locally
+
+> [http://localhost:8080/board-game](http://localhost:8080/board-game)
+
+## Git tips
+
+### Commit types
+* feature: Um novo recurso para a aplicação, e não precisa ser algo grande, mas apenas algo que não existia antes e que a pessoa final irá acessar.
+* fix: Correções de bugs
+* docs: Alterações em arquivos relacionados à documentações
+* style: Alterações de estilização, formatação etc
+* refactor: Um codigo de refatoração, ou seja, que foi alterado, que tem uma mudança transparente para o usuário final, porém uma mudança real para a aplicação
+* perf: Alterações relacionadas à performance
+* test: Criação ou modificação de testes
+* chore: Alterações em arquivos de configuração, build, distribuição, CI, ou qualquer outra coisa que não envolva diretamente o código da aplicação para o usuário final
+
+type in terminal
+```
+# initialize git repository, create git folder
+git init
+
+# add all files on the staging area
+git add .
+
+# shows tracked files on the staging
+git status
+
+# packs tracked files on the staging
+git commit -m "[ID]<type_of_commit>:<message>"
+
+# shows commit history
+git log
+
+# define main branch
+git branch -M main
+
+# add remote repository, don't forget "Git Credential Manager Core"
+git remote add origin https://*.git
+
+# sends changes to the repository
+git push -u origin <branch_name>
+
+# update branch
+git pull
+
+# create new branch
+git checkout -b <branch_name>
+
+# delete a local branch
+git branch -d <branch_name>
+
+# delete a remote branch
+git push --delete origin <branch_name>
+
+# show all branch
+git branch
+
+# upload a branch
+git push -u <branch_name>
+
+# update branch
+git rebase main
+
+# upload your changes
+git push -f
+
+# list tag
+git tag
+
+# list tag by key
+git tag -l "v1.8.5*"
+
+# create a tag
+git tag -a v1.4 -m "my version 1.4"
+
+# show a tag
+git show v1.4
+
+# creating tags later
+git log --pretty=oneline
+git tag -a v1.2 <UUID>
+```
 
 ## SVG Icons
-> [!NOTE]
 > [SVG Icons](https://www.svgrepo.com/)
 
 ## HTTP Status code list
-> [!NOTE]
 > [HHTP Status Code](https://httpstatuses.com/)
 
 ## Developers
