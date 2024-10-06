@@ -1,21 +1,25 @@
 import { useState } from "react";
 import { usePosition } from "../assets/hook/usePosition";
 import logo from '../assets/image/ia_designer.jpeg'
+import back from '../assets/image/card_back.png'
 import icon from '../assets/image/skull.png'
 import './card.css'
 
 export const Card = () => {
     const { movement } = usePosition()
-    const [ show, setShow ] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false)
 
     return (
         <>
-            <button onClick={()=>setShow(!show)}>show</button>
+            <button onClick={() => setShow(!show)}>show</button>
             <dialog open={false} id="card" style={{ ...movement }} >
                 <figure>
                     <img className="bashs" alt="card image" src={logo} style={{ boxShadow: movement.boxShadow }}></img>
                     <figcaption>IA Signature</figcaption>
                 </figure>
+                {/* <figure>
+                    <img className="bashs" alt="card image" src={back} style={{ boxShadow: movement.boxShadow }}></img>
+                </figure> */}
                 <header style={{ boxShadow: movement.boxShadow }}>
                     <img alt="card type" src={icon}></img>
                     <p>Drazhar, o Suserano do Vazio</p>
@@ -41,6 +45,16 @@ export const Card = () => {
                     <span><p>002/050 @ 2024</p><p>be344101-8faa-40fa-b056-d86c56c38b5c</p></span>
                 </footer>
             </dialog>
+            <div className="flip-card">
+                <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                        <img src="img_avatar.png" alt="Avatar" style={{ width: '300px', height: '300px' }}></img>
+                    </div>
+                    <div className="flip-card-back">
+                        <h1>John Doe</h1>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
