@@ -26,6 +26,8 @@ Generic Board Game.
 - [ ] dungeon crawler
 - [ ] survival
 #### in concept
+- [ ] sell history changes card price
+- [ ] show card price an personal collection price
 - [ ] puzzle
 - [ ] card game
 - [ ] fighting
