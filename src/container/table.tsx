@@ -8,7 +8,7 @@ export const Table = () => {
     const [turn, setTurn] = useState<number>(0)
     const [team, setTeam] = useState<Team[]>([initialTeam, initialTeam, initialTeam, initialTeam])
     const [result, setResult] = useState<number>(0)
-    const [all, setAll] = useState<number>(team.length)
+    const [all, ] = useState<number>(team.length)
 
     useEffect(()=>{
         setTeam(sort(team))
@@ -17,9 +17,9 @@ export const Table = () => {
     const addTurn = () => {
         setTurn(turn + 1)
     }
-    const whoseTurn = () => {
-        setTurn(turn + 1)
-    }
+    // const whoseTurn = () => {
+    //     setTurn(turn + 1)
+    // }
     const sort = (teams: Array<Team>) => {
         let start: Team[] = []
         let played: number = 0

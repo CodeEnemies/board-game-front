@@ -10,7 +10,7 @@ export const Dice: React.FC = () => {
     const [rotation, setRotation] = useState({ x: 60, y: 0 });
     const [translateY, setTranslateY] = useState(0);
     const [translateZ, setTranslateZ] = useState(0);
-    const [faceUp, setFaceUp] = useState<DiceFace>(1);
+    const [, setFaceUp] = useState<DiceFace>(1);
     const [isAnimating, setIsAnimating] = useState(false);
 
     const animationRef = useRef<number | null>(null);
